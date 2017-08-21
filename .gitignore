@@ -1,0 +1,7 @@
+### Meiko ###
+
+# Runtime
+/conf/config.json
+
+#RethinkDB
+/db/
