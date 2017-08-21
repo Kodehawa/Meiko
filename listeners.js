@@ -12,7 +12,7 @@ exports.listen = (client, utils) => {
             try{
                 let executedCommand = meiko.commands.get(command)
                 if(executedCommand === undefined) return
-
+                
                 if(executedCommand.category === Category.type.OWNER){
                     if(ctx.author.id !== meiko.config.ownerId){
                         ctx.channel.send(":warning: This command is owner-only!")

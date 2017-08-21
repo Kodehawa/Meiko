@@ -10,7 +10,6 @@ module.exports = class Ping extends Command {
     }
 
     
-
     async execute(meiko, content, context){
         let commands = meiko.commands;
 
