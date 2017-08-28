@@ -1,4 +1,4 @@
-var snekfetch = require("snekfetch")
+const snekfetch = require("snekfetch")
 
 module.exports = async (type) => {
     return snekfetch.get(`https://rra.ram.moe/i/r?type=${type}`)

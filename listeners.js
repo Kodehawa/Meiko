@@ -4,14 +4,20 @@ let Category = require("./commands/base/category");
 
 exports.listen = (client, utils) => {
     client.on('message', ctx => {
+
+        if (ctx.channel.type === "dm") 
+            return //Nope <3
+
         if(ctx.content.startsWith(prefix)){
             let parts = ctx.content.slice(prefix.length).split(" ")
             let command = parts[0]
             let content = ctx.content.replace(prefix + command, "")
             meiko.timesCommandsRan++
+
             try{
                 let executedCommand = meiko.commands.get(command)
-                if(executedCommand === undefined) return
+                if(executedCommand === undefined) 
+                    return
                 
                 if(executedCommand.category === Category.type.OWNER){
                     if(ctx.author.id !== meiko.config.ownerId){
@@ -19,7 +25,8 @@ exports.listen = (client, utils) => {
                         return
                     }
                 }
-                executedCommand.execute(meiko, content, ctx)
+            
+                executedCommand.execute(meiko, content.trim(), ctx)
             } catch (err){
                 console.log(err);
             }

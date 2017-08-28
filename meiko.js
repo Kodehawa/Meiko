@@ -10,5 +10,5 @@ require("./util/loader.js").registerCommands()
 require("./listeners").listen(this.client, this.utils)
 
 String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
+    return this.charAt(0).toUpperCase() + this.slice(1)
 }
