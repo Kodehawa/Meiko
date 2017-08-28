@@ -13,7 +13,7 @@ module.exports = class Cat extends Command {
     async execute(meiko, content, context){
         await Requester("http://random.cat/meow", (response) => {
             const embed = new meiko.Discord.RichEmbed()
-                .setTitle("Cats!")
+                .setDescription("**Cats!**")
                 .setImage(response.file)
             
             context.channel.send({embed}) 

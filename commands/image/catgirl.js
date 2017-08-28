@@ -24,7 +24,7 @@ module.exports = class Catgirl extends Command {
 
         await Requester(url, (response) => {
             const embed = new meiko.Discord.RichEmbed()
-                .setTitle("N-Nya~")
+                .setDescription("**N-Nya~**")
                 .setImage(response.neko)
             
             context.channel.send({embed}) 
